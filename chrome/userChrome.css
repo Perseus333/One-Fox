@@ -1,0 +1,244 @@
+/*
+"userChrome.css" is a custom CSS file that can be used to specify CSS style rules for Floorp's interface (NOT internal site) using "chrome" privileges.
+For instance, if you want to hide the tab bar, you can use the following CSS rule:
+
+**************************************
+#TabsToolbar {                       *
+    display: none !important;        *
+}                                    *
+**************************************
+
+NOTE: You can use the userChrome.css file without change preferences (about:config)
+
+Quote: https://userChrome.org | https://github.com/topics/userchrome 
+
+************************************************************************************************************************************************************************************************************************************************************/
+
+@charset "UTF-8";
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+    /* Rounds the urlbar to mimic better edge's*/
+    #urlbar-background,
+    #searchbar,
+    #urlbar-input-containe {
+        border-radius: 5px !important;
+    }
+    /*Hides the QR Sharing Button inside URL*/
+    [data-l10n-id="qrcode-generate-page-action"] {
+        display: none;
+    }
+    /*Hides the "Translate Page"(TWP) Button inside the URL bar*/
+    [aria-label="Translate this page"] {
+        display: none;
+    }
+    #forward-button[disabled="true"] {
+        display: none !important;
+    }
+    /*
+Hiding Context Menu Items
+*/
+    #context-back,
+    #context-forward,
+    #context-reload,
+    #context-bookmarkpage,
+    #context-sep-navigation,
+    #context-sendpagetodevice,
+    #context-addpagetowebpanel,
+    #context-inspect-a11y,
+    #context-setDesktopBackground,
+    #context-sep-setbackground,
+    #context-sendlinktodevice,
+    #context-sendimage,
+    #context-openlinkincontainertab,
+    #context-sendlink,
+    #context-savelink,
+    #context-openlinkprivate {
+        display: none !important;
+    }
+    /*Changing the Floorp sidebar*/
+    #sidebar-select-box {
+        display: none !important;
+    }
+    #PersonalToolbar {
+        position: relative !important;
+    }
+    /*Minimize, maximize, and close buttons are round and uniform*/
+    .titlebar-button.titlebar-min,
+    .titlebar-button.titlebar-restore,
+    .titlebar-button.titlebar-close {
+        border-radius: 50%;
+        height: 10px !important;
+        width: 10px !important;
+        margin-top: auto !important;
+        border-radius: 100%;
+        padding: 8px !important;
+        margin-bottom: auto !important;
+        margin-left: 5px !important;
+        margin-right: 10px !important;
+    }
+    /*Hides minimeze, maximize, and close icon inside the buttons*/
+    .titlebar-button>.toolbarbutton-icon {
+        opacity: 0;
+    }
+    /*Changes the colors for a more pleasant  ~ a e s t h e t i c ~ */
+    .titlebar-button.titlebar-min {
+        background-color: #a6e3a1 !important;
+    }
+    .titlebar-button.titlebar-restore {
+        background-color: #f9e2af !important;
+    }
+    .titlebar-button.titlebar-close {
+        background-color: #eba0ac !important;
+    }
+    /*Removes the placeholder text inside the searchbar*/
+    #urlbar-input::placeholder,
+    .searchbar-textbox::placeholder {
+        opacity: 0 !important;
+    }
+    .bookmark-item>.toolbarbutton-icon[type="menu"] {
+        border-radius: 50%;
+        list-style-image: url("") !important;
+        background-color: #eba0ac;
+        display: inherit !important;
+    }
+    .bookmark-item>image {
+        display: none;
+    }
+    #personal-toolbar-empty-description,
+    toolbarbutton.bookmark-item:not(.subviewbutton) {
+        margin: 6px 10px 4px 10px !important;
+    }
+    .toolbarbutton-text {
+        margin: -2px 4px -2px 4px !important;
+    }
+    .tab-icon-image {
+        border-radius: 50%;
+    }
+    .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+        content: url("") !important;
+        background-color: #eba0ac;
+    }
+    /*
+    .tab-label-container {
+        display: none !important;
+    }
+    .tabbrowser-tab:not([pinned]) {
+        flex: 0 !important;
+    }
+    .tab-close-button {
+        display: none;
+    }
+    */
+    #urlbar-container {
+        margin-top: 5px !important;
+    }
+    #back-button,
+    #reload-button,
+    #forward-button {
+        margin-top: 2px !important;
+    }
+    #urlbar,
+    #urlbar-container {
+        margin-left: 650px;
+        position: absolute;
+        display: block;
+        width: 450px !important;
+    }
+
+    #urlbar {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    #toolbar-menubar {
+        display: none;
+    }
+
+    .toolbar-items {
+        width: 600px;
+        margin-left: 100px;
+        padding-right: 700px;
+
+    }
+    #TabsToolbar-customization-target {
+        width: 630px;
+        z-index: 999;
+    }
+}
+
+
+
+
+
+
+
+
+/* Windows specific styles */
+
+@media (-moz-platform: windows),
+(-moz-platform: windows-win10) {
+    /* Hide main tabs toolbar */
+     :root[tabsintitlebar] {
+        --uc-window-control-width: 137px;
+        /* Space at the right of nav-bar for window controls */
+        /* --uc-window-drag-space-width: 24px; */
+        /* To add extra window drag space in nav-bar */
+    }
+    #nav-bar {
+        border-inline: var(--uc-window-drag-space-width, 80px) solid var(--toolbar-bgcolor);
+        border-inline-style: solid !important;
+        border-right-width: calc(var(--uc-window-control-width, 0px) + var(--uc-window-drag-space-width, 0px));
+        /* This makes it possible to drag the maximized window. */
+        margin-left: -80px;
+        /* Removes the space left when hiding .titlebar-buttonbox-container */
+    }
+     :root {
+        --uc-toolbar-height: 32px;
+        --chrome-content-separator-color: none !important;
+    }
+     :root:not([uidensity="compact"]) {
+        --uc-toolbar-height: 38px;
+    }
+
+     :root:not([inFullscreen]) #nav-bar {
+        margin-top: calc(0px - var(--uc-toolbar-height));
+        z-index: 2;
+    }
+    #toolbar-menubar {
+        min-height: unset !important;
+        height: var(--uc-toolbar-height) !important;
+        position: relative;
+    }
+    /* For a rounded button design, uncomment both lines in .titlebar-buttonbox. */
+    .titlebar-buttonbox {
+        z-index: 3 !important;
+        /* padding-right:3px; */
+    }
+    .titlebar-buttonbox * {
+        /* border-radius: 5px; */
+        width: 35px;
+        height: 38px;
+        pointer-events: auto;
+    }
+    #titlebar {
+        z-index: 3;
+        pointer-events: none;
+    }
+    #main-menubar {
+        -moz-box-flex: 1;
+        background-color: var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor);
+        background-clip: padding-box;
+        border-right: 30px solid transparent;
+        border-image: linear-gradient(to left, transparent, var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor) 30px) 20 / 30px;
+    }
+    #toolbar-menubar:not([inactive]) {
+        z-index: 2;
+    }
+    #toolbar-menubar[inactive]>#menubar-items {
+        opacity: 0;
+        pointer-events: none;
+        margin-left: var(--uc-window-drag-space-width, 0px);
+    }
+     :root[inFullscreen] #nav-bar {
+        border-right: none !important;
+    }
+}

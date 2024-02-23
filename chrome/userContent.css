@@ -1,0 +1,37 @@
+@-moz-document url-prefix("about:newtab"),
+url-prefix("about:home") {
+    /*Hides the Releases and Support Links*/
+    #floorp {
+        display: none;
+    }
+    /*Hides the cog button to customize the new tab*/
+    [data-l10n-id="newtab-personalize-icon-label"] {
+        display: none !important;
+    }
+    /*Removes the Floorp Logo*/
+    .logo-and-wordmark {
+        display: none !important;
+    }
+    main {
+        display: none;
+    }
+}
+
+
+/*Home tabs will be set to "blank" therefore this sets a*/
+
+@-moz-document url-prefix("about:home") {
+    #background {
+        background-image: url(newtab-backgrounds/kanagawa_cappuccin.png) !important;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+
+/*Autofilled forms have a light blue tint*/
+
+input:autofill {
+    background: #ffffff00 !important;
+}
