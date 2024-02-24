@@ -48,7 +48,7 @@ Credit to Newmanls for their one line functionality from [OnelineProton](https:/
 ---
 ## Themes Gallery
 
-### Catppuccin Mocha Flamingo
+### Catppuccin - Mocha Flamingo
 
 ![image](https://github.com/Perseus333/One-Fox/assets/81527705/5d13f6a9-24e8-41ff-8268-ee6684763e71)
 ---
@@ -58,3 +58,15 @@ Credit to Newmanls for their one line functionality from [OnelineProton](https:/
 ![image](https://github.com/Perseus333/One-Fox/assets/81527705/4cc8a249-e15d-469c-95e8-7f0b14f91a2c)
 ---
 
+### Everforest - Dark
+
+![image](https://github.com/Perseus333/One-Fox/assets/81527705/72ab1e6e-7116-447f-81b2-61d8258b458b)
+
+---
+
+### Gruvbox - Light
+
+![image](https://github.com/Perseus333/One-Fox/assets/81527705/4f63d9f3-2a3c-4eb8-a7ed-91d9a6d4b7b6)
+
+
+---
