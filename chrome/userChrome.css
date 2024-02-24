@@ -13,7 +13,7 @@
     [aria-label="Translate this page"] {
         display: none;
     }
-    #forward-button[disabled="true"] {
+    #stop-reload-button {
         display: none !important;
     }
     /*
@@ -80,7 +80,8 @@ Hiding Context Menu Items
     .bookmark-item>.toolbarbutton-icon[type="menu"] {
         border-radius: 50%;
         list-style-image: url("") !important;
-        background-color: #eba0ac;
+        /* background-color: #eba0ac; For catppuccin mocha (reddish)*/
+        background-color: var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor)) !important;
         display: inherit !important;
     }
     .bookmark-item>image {
@@ -98,7 +99,8 @@ Hiding Context Menu Items
     }
     .tab-icon-image[src="chrome://branding/content/icon32.png"] {
         content: url("") !important;
-        background-color: #eba0ac;
+        /* background-color: #eba0ac; For catppuccin mocha (reddish)*/
+        background-color: var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor));
     }
     /*
     .tab-label-container {
@@ -155,7 +157,7 @@ Hiding Context Menu Items
         margin-right: -40px;
     }
     #urlbar {
-        margin-left: 700px;
+        margin-left: calc(700px);
     }
     #titlebar {
         pointer-events: none;
@@ -176,6 +178,10 @@ Hiding Context Menu Items
         outline: 1px solid var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor)) !important;
         outline-offset: -1px !important;
         border-radius: 5px !important;
+    }
+    #unified-extensions-button,
+    #PanelUI-button {
+        margin-top: 5px !important;
     }
 }
 

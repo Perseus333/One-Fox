@@ -15,17 +15,14 @@ url-prefix("about:home") {
     main {
         display: none;
     }
-}
-
-
-/*Home tabs will be set to "blank" therefore this sets a*/
-
-@-moz-document url-prefix("about:home") {
     #background {
         background-image: url(newtab-backgrounds/kanagawa_cappuccin.png) !important;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+    }
+    .selected_image {
+        background-color: transparent !important;
     }
 }
 
