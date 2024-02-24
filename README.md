@@ -15,6 +15,8 @@
 
 ✅ Dynamic colors to fit any theme
 
+✅ Wallpapers for different themes (Catpuccin, Everforest, Gruvbox and Default Dark)
+
 ---
 ## Installation
 ### Dependencies
@@ -37,14 +39,16 @@ However, you can algo change the wallpapers to better suit your preferences.
 
 To do so, just navigate to the userContent.css that will be found in your root directory ([See instructions](#Instructions)), and then go to `.\Chrome\userContent.css`. Modify line `19` with any other image path.
 
+There are some recommended wallpapers inside the `newtab_backgrounds` that are found in the repository but not in the relase. You can use them if you want. This was done to make the file lighter.
 
+---
 ## Credit
 Credit to Newmanls for their one line functionality from [OnelineProton](https://github.com/newmanls/OnelineProton/tree/master)
 
 ---
 ## Themes Gallery
 
-### Catpuccin Mocha Flamingo
+### Catppuccin Mocha Flamingo
 
 ![image](https://github.com/Perseus333/One-Fox/assets/81527705/5d13f6a9-24e8-41ff-8268-ee6684763e71)
 ---
