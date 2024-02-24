@@ -12,7 +12,12 @@
 ✅ Dynamic colors to fit any theme
 ✅ Comes with a variety of newtab wallpapers (Catpuccin, Everforest, Gruvbox light and Default Dark)
 
-## Gallery
+## Themes Gallery
+
+### Catpuccin
+![image](https://github.com/Perseus333/One-Fox/assets/81527705/5d13f6a9-24e8-41ff-8268-ee6684763e71)
+
+### Firefox Default - Dark
 
 
 
