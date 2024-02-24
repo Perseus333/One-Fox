@@ -157,9 +157,6 @@ Hiding Context Menu Items
     #urlbar {
         margin-left: 700px;
     }
-    .tab-background {
-        border-radius: 0 !important;
-    }
     #titlebar {
         pointer-events: none;
     }
@@ -173,6 +170,12 @@ Hiding Context Menu Items
         max-width: 690px;
         min-width: 690px;
         --tab-min-width: 30px !important;
+    }
+    #TabsToolbar #firefox-view-button[open]:not(:focus-visible)>.toolbarbutton-icon:-moz-lwtheme,
+    .tab-background[selected]:not([multiselected="true"]):-moz-lwtheme {
+        outline: 1px solid var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor)) !important;
+        outline-offset: -1px !important;
+        border-radius: 5px !important;
     }
 }
 
