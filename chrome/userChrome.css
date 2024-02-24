@@ -1,22 +1,5 @@
-/*
-"userChrome.css" is a custom CSS file that can be used to specify CSS style rules for Floorp's interface (NOT internal site) using "chrome" privileges.
-For instance, if you want to hide the tab bar, you can use the following CSS rule:
-
-**************************************
-#TabsToolbar {                       *
-    display: none !important;        *
-}                                    *
-**************************************
-
-NOTE: You can use the userChrome.css file without change preferences (about:config)
-
-Quote: https://userChrome.org | https://github.com/topics/userchrome 
-
-************************************************************************************************************************************************************************************************************************************************************/
-
 @charset "UTF-8";
 @-moz-document url(chrome://browser/content/browser.xhtml) {
-    /* Rounds the urlbar to mimic better edge's*/
     #urlbar-background,
     #searchbar,
     #urlbar-input-containe {
@@ -119,13 +102,13 @@ Hiding Context Menu Items
     }
     /*
     .tab-label-container {
-        display: none !important;
+    display: none !important;
     }
     .tabbrowser-tab:not([pinned]) {
-        flex: 0 !important;
+    flex: 0 !important;
     }
     .tab-close-button {
-        display: none;
+    display: none;
     }
     */
     #urlbar-container {
@@ -143,33 +126,58 @@ Hiding Context Menu Items
         display: block;
         width: 450px !important;
     }
-
-    #urlbar {
-        display: flex;
-        flex-direction: row-reverse;
-    }
-
     #toolbar-menubar {
         display: none;
     }
-
     .toolbar-items {
         width: 600px;
         margin-left: 100px;
         padding-right: 700px;
-
     }
     #TabsToolbar-customization-target {
-        width: 630px;
+        width: 120%;
         z-index: 999;
+    }
+    hbox.titlebar-spacer {
+        display: none !important;
+    }
+    #navbar {
+        width: 108% !important;
+    }
+    #unified-extensions-button {
+        position: relative;
+    }
+    #nav-bar:not([urlbar-exceeds-toolbar-bounds]),
+    toolbar[overflowable][customizing]>.customization-target {
+        overflow: visible !important;
+    }
+    #PanelUI-button {
+        margin-right: -40px;
+    }
+    #urlbar {
+        margin-left: 700px;
+    }
+    .tab-background {
+        border-radius: 0 !important;
+    }
+    #titlebar {
+        pointer-events: none;
+    }
+    #TabsToolbar-customization-target {
+        pointer-events: all;
+    }
+    #floorp-tabbar-window-manage-container {
+        margin-left: auto;
+    }
+    #tabbrowser-tabs {
+        max-width: 690px;
+        min-width: 690px;
+        --tab-min-width: 30px !important;
     }
 }
 
 
-
-
-
-
+/* The following code is a modified extract of Oneline for Proton (see credits in README.md)*/
 
 
 /* Windows specific styles */
@@ -198,15 +206,9 @@ Hiding Context Menu Items
      :root:not([uidensity="compact"]) {
         --uc-toolbar-height: 38px;
     }
-
      :root:not([inFullscreen]) #nav-bar {
         margin-top: calc(0px - var(--uc-toolbar-height));
         z-index: 2;
-    }
-    #toolbar-menubar {
-        min-height: unset !important;
-        height: var(--uc-toolbar-height) !important;
-        position: relative;
     }
     /* For a rounded button design, uncomment both lines in .titlebar-buttonbox. */
     .titlebar-buttonbox {
@@ -221,22 +223,6 @@ Hiding Context Menu Items
     }
     #titlebar {
         z-index: 3;
-        pointer-events: none;
-    }
-    #main-menubar {
-        -moz-box-flex: 1;
-        background-color: var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor);
-        background-clip: padding-box;
-        border-right: 30px solid transparent;
-        border-image: linear-gradient(to left, transparent, var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor) 30px) 20 / 30px;
-    }
-    #toolbar-menubar:not([inactive]) {
-        z-index: 2;
-    }
-    #toolbar-menubar[inactive]>#menubar-items {
-        opacity: 0;
-        pointer-events: none;
-        margin-left: var(--uc-window-drag-space-width, 0px);
     }
      :root[inFullscreen] #nav-bar {
         border-right: none !important;
