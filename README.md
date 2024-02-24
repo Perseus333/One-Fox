@@ -7,19 +7,57 @@
 
 ## Features:
 ✅ All content in a single line
+
 ✅ Simple  & Clean UI
+
 ✅ No compromises
+
 ✅ Dynamic colors to fit any theme
+
 ✅ Comes with a variety of newtab wallpapers (Catpuccin, Everforest, Gruvbox light and Default Dark)
 
+---
+## Installation
+### Dependencies
+- Firefox or any of its forks (currently only tested on floorp)
+That's it!
+
+### Instructions
+1. Go to the releases tab and download the lastest release
+2. Type in the search bar: `about:profiles`
+3. Go to the profile that is in use aka. the only one you can't delete
+4. On the `Root Directory` row copy the path
+5. Extract the .zip that you downloaded from the releases
+6. Extract it to the copied path by pasting the path when it promps you the destination of the extraction
+7. Once complete, restart the browser and you should see the changes applied!
+---
+## Customization
+If you want to customize either the userChrome.css or the userContent.css you can do so freely by editing them in your preferred text or code editor.
+
+However, you can algo change the wallpapers to better suit your preferences. 
+
+To do so, just navigate to the userContent.css that will be found in your root directory ([See instructions](#Instructions)), and then go to `.\Chrome\userContent.css`. Modify line `19` with any other image path. Keep in mind that there are already some recommended wallpapers inside the `newtab_backgrounds` folder inside the `Chrome` folder.
+
+---
 ## Themes Gallery
 
-### Catpuccin
+### Catpuccin Mocha Flamingo
+
 ![image](https://github.com/Perseus333/One-Fox/assets/81527705/5d13f6a9-24e8-41ff-8268-ee6684763e71)
+---
 
 ### Firefox Default - Dark
 
+![image](https://github.com/Perseus333/One-Fox/assets/81527705/4cc8a249-e15d-469c-95e8-7f0b14f91a2c)
+---
 
+### Everforest - Dark
+
+---
+
+### Gruvbox - Light
+
+---
 
 ## Credit
 
