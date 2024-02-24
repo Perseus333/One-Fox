@@ -6,6 +6,7 @@
 **Disclaimer:** This was only tested for the floorp browser, but should still work for any other firefox forks that have a similar style
 
 ## Features:
+
 ✅ All content in a single line
 
 ✅ Simple  & Clean UI
@@ -13,8 +14,6 @@
 ✅ No compromises
 
 ✅ Dynamic colors to fit any theme
-
-✅ Comes with a variety of newtab wallpapers (Catpuccin, Everforest, Gruvbox light and Default Dark)
 
 ---
 ## Installation
@@ -36,7 +35,11 @@ If you want to customize either the userChrome.css or the userContent.css you ca
 
 However, you can algo change the wallpapers to better suit your preferences. 
 
-To do so, just navigate to the userContent.css that will be found in your root directory ([See instructions](#Instructions)), and then go to `.\Chrome\userContent.css`. Modify line `19` with any other image path. Keep in mind that there are already some recommended wallpapers inside the `newtab_backgrounds` folder inside the `Chrome` folder.
+To do so, just navigate to the userContent.css that will be found in your root directory ([See instructions](#Instructions)), and then go to `.\Chrome\userContent.css`. Modify line `19` with any other image path.
+
+
+## Credit
+Credit to Newmanls for their one line functionality from [OnelineProton](https://github.com/newmanls/OnelineProton/tree/master)
 
 ---
 ## Themes Gallery
@@ -51,14 +54,3 @@ To do so, just navigate to the userContent.css that will be found in your root d
 ![image](https://github.com/Perseus333/One-Fox/assets/81527705/4cc8a249-e15d-469c-95e8-7f0b14f91a2c)
 ---
 
-### Everforest - Dark
-
----
-
-### Gruvbox - Light
-
----
-
-## Credit
-
-Credit to Newmanls for their one line functionality from [OnelineProton](https://github.com/newmanls/OnelineProton/tree/master)
