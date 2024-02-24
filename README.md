@@ -1,8 +1,20 @@
 # One Fox
-![Screenshot (221)](https://github.com/Perseus333/One-Fox/assets/81527705/c25818e6-852e-461a-8fe2-b2d411826add)
+
+![github img](https://github.com/Perseus333/One-Fox/assets/81527705/e0a6ce6e-dc37-49e2-a9e1-b290a4fc0529)
 
 ## One of the few still working one line chrome CSS styles
 **Disclaimer:** This was only tested for the floorp browser, but should still work for any other firefox forks that have a similar style
+
+## Features:
+✅ All content in a single line
+✅ Simple  & Clean UI
+✅ No compromises
+✅ Dynamic colors to fit any theme
+✅ Comes with a variety of newtab wallpapers (Catpuccin, Everforest, Gruvbox light and Default Dark)
+
+## Gallery
+
+
 
 ## Credit
 
