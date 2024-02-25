@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @-moz-document url(chrome://browser/content/browser.xhtml) {
+    /*Rounds a bit the url bar*/
     #urlbar-background,
     #searchbar,
     #urlbar-input-containe {
@@ -37,10 +38,11 @@ Hiding Context Menu Items
     #context-openlinkprivate {
         display: none !important;
     }
-    /*Changing the Floorp sidebar*/
+    /*Deletes the Floorp sidebar*/
     #sidebar-select-box {
         display: none !important;
     }
+    /*Must do soomething for sure*/
     #PersonalToolbar {
         position: relative !important;
     }
@@ -62,7 +64,7 @@ Hiding Context Menu Items
     .titlebar-button>.toolbarbutton-icon {
         opacity: 0;
     }
-    /*Changes the colors for a more pleasant  ~ a e s t h e t i c ~ */
+    /*Changes the minimize, maximize and close windown button colors for a more pleasant  ~ a e s t h e t i c ~ */
     .titlebar-button.titlebar-min {
         background-color: #a6e3a1 !important;
     }
@@ -77,6 +79,7 @@ Hiding Context Menu Items
     .searchbar-textbox::placeholder {
         opacity: 0 !important;
     }
+    /*Makes the folders icons a sphere of the highlight color of the applied theme*/
     .bookmark-item>.toolbarbutton-icon[type="menu"] {
         border-radius: 50%;
         list-style-image: url("") !important;
@@ -84,24 +87,30 @@ Hiding Context Menu Items
         background-color: var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor)) !important;
         display: inherit !important;
     }
+    /*Removes the images from the bookmarks*/
     .bookmark-item>image {
         display: none;
     }
+    /*Margins of the bookmarks*/
     #personal-toolbar-empty-description,
     toolbarbutton.bookmark-item:not(.subviewbutton) {
         margin: 6px 10px 4px 10px !important;
     }
+    /*It should align the window min, max and close buttons*/
     .toolbarbutton-text {
         margin: -2px 4px -2px 4px !important;
     }
+    /*Makes all the icons of the webdsites on the tabs round*/
     .tab-icon-image {
         border-radius: 50%;
     }
+    /*Changes the new tab icon to a solid circle of the hightlight color of the current theme*/
     .tab-icon-image[src="chrome://branding/content/icon32.png"] {
         content: url("") !important;
         /* background-color: #eba0ac; For catppuccin mocha (reddish)*/
         background-color: var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor));
     }
+    /* Removes the text from the tabs*/
     /*
     .tab-label-container {
     display: none !important;
@@ -113,80 +122,99 @@ Hiding Context Menu Items
     display: none;
     }
     */
+    /*Aligns the text inside the tabs to not be so crammed with the top of the screen*/
     #urlbar-container {
         margin-top: 5px !important;
     }
+    /*Centers the navigation buttons more to the horizontal center of the titlebar*/
     #back-button,
     #reload-button,
     #forward-button {
         margin-top: 2px !important;
     }
+    /*Aligns the url bar to the right leaving space for the tabs*/
     #urlbar,
     #urlbar-container {
         margin-left: 650px;
         position: absolute;
         display: block;
-        width: 450px !important;
-    }
-    #toolbar-menubar {
-        display: none;
+        width: 410px !important;
     }
     .toolbar-items {
         width: 600px;
         margin-left: 100px;
         padding-right: 700px;
     }
+    /*Brings the tabs to the front and makes them use all the available space*/
     #TabsToolbar-customization-target {
         width: 120%;
         z-index: 999;
     }
+    /*Removes a spacer to fit more elements into the single line*/
     hbox.titlebar-spacer {
         display: none !important;
     }
+    /*Makes the navingation bar wider to align better the other items*/
     #navbar {
         width: 108% !important;
     }
+    /*Makes the extensions button position relative to the other items*/
     #unified-extensions-button {
         position: relative;
     }
+    /*Allows for the url bar to exceed the toolbar so that the extension button is clickable*/
     #nav-bar:not([urlbar-exceeds-toolbar-bounds]),
     toolbar[overflowable][customizing]>.customization-target {
         overflow: visible !important;
     }
+    /*Alings the 3 dots button*/
     #PanelUI-button {
         margin-right: -40px;
     }
+    /*Aligns the urlbar*/
     #urlbar {
-        margin-left: calc(700px);
+        margin-left: 700px;
     }
+    /*Makes the titlebar (container of the tabs) clickthrough so that the urlbar and other items can be interacted with*/
     #titlebar {
         pointer-events: none;
     }
+    /*Specifies the tabs (child of the titlebar) to be clickable to enable interactions with the tabs*/
     #TabsToolbar-customization-target {
         pointer-events: all;
     }
+    /*Moves the min, max close window buttons to the furthest right*/
     #floorp-tabbar-window-manage-container {
         margin-left: auto;
     }
+    /*Adjusts the sizing of the tabs and makes them be able to be much smaller*/
     #tabbrowser-tabs {
         max-width: 690px;
         min-width: 690px;
         --tab-min-width: 30px !important;
     }
+    /*Highlights the active tab with an outine of the highlight color of the current theme*/
     #TabsToolbar #firefox-view-button[open]:not(:focus-visible)>.toolbarbutton-icon:-moz-lwtheme,
     .tab-background[selected]:not([multiselected="true"]):-moz-lwtheme {
         outline: 1px solid var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor)) !important;
         outline-offset: -1px !important;
         border-radius: 5px !important;
     }
+    /*Aligns the extension and three dots buttons to be more centered with the other UI in terms of vertical position*/
     #unified-extensions-button,
-    #PanelUI-button {
+    #PanelUI-button,
+    #downloads-button {
         margin-top: 5px !important;
+    }
+    /*Collapses the bookmarks tab into a single button to fit into the one line*/
+     :root:not([customizing]) #personal-bookmarks {
+        max-width: 0px !important;
+        margin-right: var(--tab-min-height) !important;
     }
 }
 
 
-/* The following code is a modified extract of Oneline for Proton (see credits in README.md)*/
+/* The following code is a modified extract of Oneline for Proton  by Newmanls (see credits in README.md)*/
 
 
 /* Windows specific styles */
