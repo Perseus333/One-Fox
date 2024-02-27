@@ -80,12 +80,12 @@ Hiding Context Menu Items
         opacity: 0 !important;
     }
     /*Makes the folders icons a sphere of the highlight color of the applied theme*/
-    .bookmark-item>.toolbarbutton-icon[type="menu"] {
+    .bookmark-item>.toolbarbutton-icon[type="menu"],
+    .menu-iconic.bookmark-item[container="true"]>.menu-iconic-left>image.menu-iconic-icon {
         border-radius: 50%;
         list-style-image: url("") !important;
         /* background-color: #eba0ac; For catppuccin mocha (reddish)*/
         background-color: var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor)) !important;
-        display: inherit !important;
     }
     /*Removes the images from the bookmarks*/
     .bookmark-item>image {
@@ -142,7 +142,7 @@ Hiding Context Menu Items
     }
     .toolbar-items {
         width: 600px;
-        margin-left: 100px;
+        margin-left: 120px;
         padding-right: 700px;
     }
     /*Brings the tabs to the front and makes them use all the available space*/
@@ -189,8 +189,8 @@ Hiding Context Menu Items
     }
     /*Adjusts the sizing of the tabs and makes them be able to be much smaller*/
     #tabbrowser-tabs {
-        max-width: 690px;
-        min-width: 690px;
+        max-width: 670px;
+        min-width: 670px;
         --tab-min-width: 30px !important;
     }
     /*Highlights the active tab with an outine of the highlight color of the current theme*/
@@ -206,15 +206,49 @@ Hiding Context Menu Items
     #downloads-button {
         margin-top: 5px !important;
     }
-    /*Collapses the bookmarks tab into a single button to fit into the one line*/
-     :root:not([customizing]) #personal-bookmarks {
-        max-width: 0px !important;
+    /*Places the toolbar in the front so that the elements are clickable*/
+    #personal-toolbar {
+        z-index: 9999999 !important;
+    }
+    #PersonalToolbar {
+        position: absolute;
+        margin-top: -40px;
+        z-index: 9999;
+        /*Hides the complete bar*/
+        visibility: hidden;
+    }
+    #personal-bookmarks {
+        /* Shows only the icon, it has to be said explicitly because earlier we hid the parent*/
+        visibility: visible;
+        /*Ailgning the icon to fit inside the rest of the UI*/
+        margin-left: 90px;
+        margin-top: 1px;
         margin-right: var(--tab-min-height) !important;
+        padding-top: 5px;
+        height: 36px !important;
+    }
+    /*Helps with aligning the bookmarks tab*/
+    #PlacesToolbar {
+        position: absolute;
+    }
+    /*Collapses all the bookmarks into a single icon - idea by: u/hansmn*/
+    #personal-bookmarks,
+    #PlacesToolbar,
+    #PlacesToolbarItems {
+        min-width: 0;
+        max-width: 0px !important;
+    }
+    /*Changes the icon from an arrow to the bookmark icon*/
+    #PlacesChevron {
+        list-style-image: url("chrome://browser/skin/fluentUI/bookmark-hollow.svg") !important;
     }
 }
 
 
-/* The following code is a modified extract of Oneline for Proton  by Newmanls (see credits in README.md)*/
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+/* The following code is a modified extract of Oneline for Proton  by Newmanls (see credits in README.md) */
 
 
 /* Windows specific styles */
