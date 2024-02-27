@@ -82,10 +82,12 @@ Hiding Context Menu Items
     /*Makes the folders icons a sphere of the highlight color of the applied theme*/
     .bookmark-item>.toolbarbutton-icon[type="menu"],
     .menu-iconic.bookmark-item[container="true"]>.menu-iconic-left>image.menu-iconic-icon {
-        border-radius: 50%;
         list-style-image: url("") !important;
         /* background-color: #eba0ac; For catppuccin mocha (reddish)*/
         background-color: var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor)) !important;
+    }
+    .menu-iconic-left>image.menu-iconic-icon {
+        border-radius: 50%;
     }
     /*Removes the images from the bookmarks*/
     .bookmark-item>image {
@@ -241,6 +243,17 @@ Hiding Context Menu Items
     /*Changes the icon from an arrow to the bookmark icon*/
     #PlacesChevron {
         list-style-image: url("chrome://browser/skin/fluentUI/bookmark-hollow.svg") !important;
+    }
+    /*Makes the bookmarks more compact - Credit: https://www.youtube.com/@Snowwie88*/
+    menupopup:not(.in-menulist)>menuitem,
+    menupopup:not(.in-menulist)>menu {
+        padding-block: 1px !important;
+        /* reduce to 3px, 2px, 1px or 0px as needed */
+        min-height: unset !important;
+        /* v92.0 - for padding below 4px */
+    }
+     :root {
+        --arrowpanel-menuitem-padding: 4px 8px !important;
     }
 }
 
