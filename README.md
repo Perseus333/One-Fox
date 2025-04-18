@@ -2,7 +2,7 @@
 
 ![github img](https://github.com/Perseus333/One-Fox/assets/81527705/e0a6ce6e-dc37-49e2-a9e1-b290a4fc0529)
 
-## One of the few still working one line chrome CSS styles
+## ~~One of the few still working one line chrome CSS styles~~ (Broken)
 **Disclaimer:** This was only tested for the floorp browser, but should still work for any other firefox forks that have a similar style
 
 ## Features:
